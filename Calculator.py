@@ -14,6 +14,8 @@ class Calculator:
 	def sqr(self, num1):
 		return num1 * num1
 
+	def sqrRoot(self, num1):
+		return num1 ** (1/2)
 
 if __name__ == "__main__":
 	c = Calculator()
@@ -22,3 +24,4 @@ if __name__ == "__main__":
 	print(c.mul(4,3))
 	print(c.div(0,4))
 	print(c.sqr(4))
+	print(c.sqrRoot(16))
