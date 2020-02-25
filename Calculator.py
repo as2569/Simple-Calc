@@ -27,6 +27,8 @@ while cont == True:
 	print('2 for sub')
 	print('3 for mul')
 	print('4 for div')
+	print('5 for square')
+	print('6 for square root')
 	print('q for quit')
 	print('\n')
 
@@ -49,6 +51,12 @@ while cont == True:
 		n1 = input('Enter first number ')
 		n2 = input('Enter second number ')
 		print(n1 + ' / ' + n2 + ' = ' + str(c.div(float(n1), float(n2))))
+	elif choice == '5':
+		n1 = input('Enter number ')
+		print('Square of ' + n1 + ' = ' + str(c.sqr(float(n1))))
+	elif choice == '6':
+		n1 = input('Enter first number ')
+		print('Square root of ' + n1 + ' = ' + str(c.sqrRoot(float(n1))))
 	else:
 		print('invalid input ')
 
