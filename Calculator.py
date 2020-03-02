@@ -19,6 +19,7 @@ class Calculator:
 
 #if __name__ == "__main__":
 
+"""
 c = Calculator()
 cont = True
 
@@ -67,3 +68,4 @@ while cont == True:
 	#print(c.div(0,4))
 	#print(c.sqr(4))
 	#print(c.sqrRoot(16))
+"""
