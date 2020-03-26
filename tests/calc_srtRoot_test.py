@@ -7,7 +7,7 @@ def test_calc_sqrRoot():
 	fr.openFile('csvFiles/UnitTestSquareRoot.csv')
 
 	for row in fr.reader:
-		if calc.sqr(int(row['Value'])) == float(row[1]):
+		if calc.sqrRoot(int(row['Value 1'])) == float(row['Result']):
 			continue
 		else:
 			assert False
