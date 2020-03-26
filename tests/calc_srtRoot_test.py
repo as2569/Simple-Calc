@@ -2,7 +2,7 @@ from Calculator import Calculator
 from FileReader import FileReader
 
 def test_calc_sqrRoot():
-	c = Calculator()
+	calc = Calculator()
 	fr = FileReader()
 	fr.openFile('csvFiles/UnitTestSquareRoot.csv')
 
