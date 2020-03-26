@@ -1,8 +1,11 @@
 from FileReader import FileReader
 from StatsCalc import StatsCalc
+from Calculator import Calculator
 
-#fr = FileReader()
-#fr.openFile('testCSV.csv')
 
-calc = StatsCalc()
-calc.test()
+calc = Calculator()
+fr = FileReader()
+fr.openFile('csvFiles/testCSV.csv')
+
+for row in fr.reader:
+
