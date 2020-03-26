@@ -8,7 +8,7 @@ class FileReader:
 
 	def openFile(self, fileName):
 		self.file = open(fileName, newline='')
-		self.reader = csv.reader(self.file, quoting=csv.QUOTE_NONE)
+		self.reader = csv.DictReader(self.file, quoting=csv.QUOTE_NONE)
 #		for row in self.reader:
 #			print(row)
 
