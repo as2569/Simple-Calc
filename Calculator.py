@@ -12,8 +12,8 @@ class Calculator:
 		return num1 / num2
 
 	def sqr(self, num1):
-		return num1 * num1
+		return round(num1 * num1, 3)
 
 	def sqrRoot(self, num1):
-		return num1 ** (1/2)
+		return round(num1 ** (1/2), 3)
 
