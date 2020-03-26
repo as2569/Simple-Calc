@@ -1,7 +1,17 @@
 from Calculator import Calculator
+from FileReader import FileReader
 
 def test_calc_sqrRoot():
 	c = Calculator()
-	assert c.sqrRoot(16) == 4
+	fr = FileReader()
+	fr.openFile('csvFiles/UnitTestSquareRoot.csv')
+
+	for row in fr.reader:
+		if calc.sqr(row[0]) == row[1]:
+			continue
+		else:
+			assert False
+
+	assert True
 
 
