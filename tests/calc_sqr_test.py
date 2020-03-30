@@ -1,7 +1,17 @@
 from Calculator import Calculator
+from FileReader import FileReader
 
 def test_calc_sqr():
-	c = Calculator()
-	assert c.sqr(3) == 9
+	calc = Calculator()
+	fr = FileReader()
+	fr.openFile('csvFiles/UnitTestSquare.csv')
+
+	for row in fr.reader:
+		if calc.sqr(int(row['Value 1'])) == round(float(row['Result']),3):
+			continue
+		else:
+			assert False
+
+	assert True
 
 
