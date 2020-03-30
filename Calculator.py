@@ -9,7 +9,7 @@ class Calculator:
 		return num1 * num2
 
 	def div(self, num1, num2):
-		return num1 / num2
+		return round(num1 / num2, 3)
 
 	def sqr(self, num1):
 		return round(num1 * num1, 3)

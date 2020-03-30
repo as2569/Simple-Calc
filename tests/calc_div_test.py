@@ -1,7 +1,17 @@
 from Calculator import Calculator
+from FileReader import FileReader
 
 def test_calc_div():
-	c = Calculator()
-	assert c.div(12,3) == 4
+	calc = Calculator()
+	fr = FileReader()
+	fr.openFile('csvFiles/UnitTestDivision.csv')
+
+	for row in fr.reader:
+		if calc.div(int(row['Value 2']), int(row['Value 1'])) == round(int(row['Result']),3):
+			continue
+		else:
+			assert False
+
+	assert True
 
 
