@@ -7,7 +7,7 @@ def test_calc_div():
 	fr.openFile('csvFiles/UnitTestDivision.csv')
 
 	for row in fr.reader:
-		if calc.div(int(row['Value 2']), int(row['Value 1'])) == round(int(row['Result']),3):
+		if calc.div(int(row['Value 2']), int(row['Value 1'])) == round(float(row['Result']),3):
 			continue
 		else:
 			assert False
