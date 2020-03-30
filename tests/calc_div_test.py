@@ -1,6 +1,7 @@
 from Calculator import Calculator
 from FileReader import FileReader
 
+
 def test_calc_div():
 	calc = Calculator()
 	fr = FileReader()
