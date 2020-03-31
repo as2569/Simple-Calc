@@ -3,8 +3,7 @@ from FileReader import FileReader
 
 def test_stats_calc():
 	fr = FileReader()
-	#fr.openFile('testFile.csv')
-	statsCalc = statsCalc()
+	statsCalc = StatsCalc()
 
 	if statsCalc.populationMean() != 5120.729:
 		assert False
