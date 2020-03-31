@@ -13,7 +13,7 @@ def test_stats_calc():
 		assert False
 	if statsCalc.standardDev() != 2897.721:
 		assert False
-	if statsCalc.variance != 8396786.683:
+	if statsCalc.variance() != 8396786.683:
 		assert False
 	assert True
 
