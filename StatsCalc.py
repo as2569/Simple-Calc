@@ -79,4 +79,5 @@ class StatsCalc:
 				targetValue += 0
 		return targetValue / len(self.data)
 
-
+	def proportion(target, self):
+		return target / len(self.data)
