@@ -48,3 +48,13 @@ class StatsCalc:
 			sqrDiff += val
 		foo = self.calc.div(sqrDiff, len(self.data))
 		return self.calc.sqrRoot(foo)
+
+	def median(self):
+		print('todo')
+
+	def variance(self):
+		mean = self.populationMean()
+		values = 0;
+		for i in range(len(self.data)):
+			values += self.calc.sqr(self.calc.sub(self.data[i], mean))
+		return self.calc.div(values, len(self.data))
