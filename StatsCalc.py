@@ -62,3 +62,12 @@ class StatsCalc:
 			values += self.calc.sqr(self.calc.sub(self.data[i], mean))
 		return self.calc.div(values, len(self.data))
 
+	def zScore(self, index):
+		z = self.calc.div(self.calc.sub(self.data[index], self.populationMean()), self.standardDev())
+		return z
+
+	def confidenceInterval(self):
+		# z value for 95% confidence interval is 1.960
+		top = self.populationMean() + 1.96 * (self.standardDev()/1000)
+		bottom = self.populationMean() - 1.96 * (self.standardDev()/1000)
+		return (top, bottom)
