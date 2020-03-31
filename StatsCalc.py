@@ -39,5 +39,12 @@ class StatsCalc:
 
 		return topKey
 
-	#def standardDev(self):
-
+	def standardDev(self):
+		mean = self.populationMean()
+		sqrDiff = 0
+		for i in range(len(self.data)):
+			val = self.calc.sub(self.data[i], int(mean))
+			val = self.calc.sqr(val)
+			sqrDiff += val
+		foo = self.calc.div(sqrDiff, len(self.data))
+		return self.calc.sqrRoot(foo)
