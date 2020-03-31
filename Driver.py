@@ -2,10 +2,14 @@ from FileReader import FileReader
 from StatsCalc import StatsCalc
 from Calculator import Calculator
 
+#calc = Calculator()
+statsCalc = StatsCalc()
+#statsCalc.fr.fixFile()
 
-calc = Calculator()
-fr = FileReader()
-fr.openFile('csvFiles/testCSV.csv')
+#fr = FileReader()
+#fr.openFile('tests/csvFiles/testCSV.csv')
 
-for row in fr.reader:
+print(str(statsCalc.populationMean()))
+print(str(statsCalc.populationMode()))
+
 
