@@ -6,40 +6,38 @@ class StatsCalc:
 	def __init__(self):
 		self.fr = FileReader()
 		self.calc = Calculator()
+		self.data = []
 		self.setup()
 
 	def setup(self):
-		self.fr.openFile('tests/csvFiles/testFile.csv')
-		print("num records " + str(self.fr.numRecords))
-		self.fr.closeFile()
+		with open('tests/csvFiles/testFile.csv') as csv_file:
+			csv_reader = csv.reader(csv_file, delimiter=',', quoting=csv.QUOTE_NONE)
+			for row in csv_reader:
+				self.data.append(int(row[0]))
 
 	def populationMean(self):
 		sum = 0
-		numRows = 0
-		with open('tests/csvFiles/testFile.csv') as csv_file:
-			csv_reader = csv.reader(csv_file, delimiter=',', quoting=csv.QUOTE_NONE)
-			for row in csv_reader:
-				sum += float(row[0])
-				numRows += 1
-		return self.calc.div(sum, numRows)
+		for i in range(len(self.data)):
+			sum += self.data[i]
+		return self.calc.div(sum, len(self.data))
 
 	def populationMode(self):
 		modeDict = {}
-		with open('tests/csvFiles/testFile.csv') as csv_file:
-			csv_reader = csv.reader(csv_file, delimiter=',', quoting=csv.QUOTE_NONE)
-			for row in csv_reader:
-				val = int(row[0])
-				if val in modeDict:
-					modeDict[val] = modeDict[val] + 1
-				else:
-					modeDict[val] = 1
+		for i in range(len(self.data)):
+			val = self.data[i]
+			if val in modeDict:
+				modeDict[val] = modeDict[val] + 1
+			else:
+				modeDict[val] = 1
 
-			topValue = 0
-			topKey = None
-			for key in modeDict:
-				if modeDict[key] > topValue:
-					topValue = modeDict[key]
-					topKey = key
+		topValue = 0
+		topKey = None
+		for key in modeDict:
+			if modeDict[key] > topValue:
+				topValue = modeDict[key]
+				topKey = key
 
 		return topKey
+
+	#def standardDev(self):
 
