@@ -1,6 +1,7 @@
 from FileReader import FileReader
 from Calculator import Calculator
 import csv
+import random
 
 class StatsCalc:
 	def __init__(self):
@@ -72,12 +73,22 @@ class StatsCalc:
 		bottom = self.populationMean() - 1.96 * (self.standardDev()/1000)
 		return (top, bottom)
 
-	def populationProportion(target, self):
+	def populationProportion(self, target):
 		targetValue = 0
 		for i in range(len(self.data)):
 			if self.data[i] in target:
 				targetValue += 0
 		return targetValue / len(self.data)
 
-	def proportion(target, self):
+	def proportion(self, target):
 		return target / len(self.data)
+
+	def sampleMean(self, sampleSize):
+		rand = Random()
+		sum = 0
+		for i in range(sampleSize):
+			val = rand.randint(1000)
+			sum += self.data[val]
+		return self.calc.div(sum, sampleSize)
+
+
