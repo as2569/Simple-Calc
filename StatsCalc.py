@@ -50,7 +50,10 @@ class StatsCalc:
 		return self.calc.sqrRoot(foo)
 
 	def median(self):
-		print('todo')
+		l = self.data
+		l.sort()
+		middle = int(len(l) / 2)
+		return l[middle]
 
 	def variance(self):
 		mean = self.populationMean()
@@ -58,3 +61,4 @@ class StatsCalc:
 		for i in range(len(self.data)):
 			values += self.calc.sqr(self.calc.sub(self.data[i], mean))
 		return self.calc.div(values, len(self.data))
+
