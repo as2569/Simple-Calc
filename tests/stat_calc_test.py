@@ -7,7 +7,7 @@ def test_stats_calc():
 
 	if statsCalc.populationMean() != 5120.729:
 		assert False
-	if stastCalc.populationMode() != 3488:
+	if statsCalc.populationMode() != 3488:
 		assert False
 
 	assert True
