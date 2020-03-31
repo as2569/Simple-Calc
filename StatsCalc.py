@@ -71,3 +71,12 @@ class StatsCalc:
 		top = self.populationMean() + 1.96 * (self.standardDev()/1000)
 		bottom = self.populationMean() - 1.96 * (self.standardDev()/1000)
 		return (top, bottom)
+
+	def populationProportion(target, self):
+		targetValue = 0
+		for i in range(len(self.data)):
+			if self.data[i] in target:
+				targetValue += 0
+		return targetValue / len(self.data)
+
+
