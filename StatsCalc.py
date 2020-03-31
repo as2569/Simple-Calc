@@ -87,8 +87,23 @@ class StatsCalc:
 		rand = Random()
 		sum = 0
 		for i in range(sampleSize):
-			val = rand.randint(1000)
+			val = rand.randInt(1000)
 			sum += self.data[val]
 		return self.calc.div(sum, sampleSize)
 
-
+	def sampleStandardDev(self, sampleSize):
+		rand = Random()
+		values = []
+		sum = 0
+		for i in range(sampleSize):
+			val = rand.randInt(1000)
+			values.append(self.data[val])
+			sum += self.data[val]
+		mean = self.calc.div(sum, sampleSize)
+		sqrDiff = 0
+		for y in values:
+			val = sel.calc.sub(y, mean)
+			val = self.calc.sqr(val)
+			sqrDiff += val
+		foo = self.calc.div(sqrDiff, sampleSize)
+		return self.calc.sqrRoot(foo)
